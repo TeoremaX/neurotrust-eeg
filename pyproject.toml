@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "neurotrust-eeg"
+version = "0.1.0"
+description = "Explainable and efficient brain-inspired AI for low-data EEG classification"
+requires-python = ">=3.10"
+authors = [{name = "Teodoro Piñuela Martin"}]
+readme = "README.md"
+
+[tool.setuptools.packages.find]
+where = ["src"]

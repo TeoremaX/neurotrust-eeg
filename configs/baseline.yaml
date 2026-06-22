@@ -1,0 +1,31 @@
+seed: 42
+run_name: baseline
+
+data:
+  root: data/raw/chbmit
+  index_csv: data/processed/index.csv
+  window_seconds: 4.0
+  stride_seconds: 2.0
+  sample_rate: 256
+  min_seizure_overlap: 0.25
+  test_subjects: ["chb01"]
+  val_subjects: ["chb02"]
+  max_windows_per_class: 2000
+
+model:
+  name: tiny_tcn
+  in_channels: 18
+  hidden_channels: 32
+  num_blocks: 3
+  kernel_size: 7
+  dropout: 0.20
+
+training:
+  batch_size: 64
+  epochs: 20
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  positive_weight: auto
+
+outputs:
+  run_dir: runs/baseline
